@@ -9,7 +9,7 @@ FONCTIONNALITES  ...................................................
 
 COMMANDES............................................................
 
-$ gli scaffold telApp Ajouter modifier Supprimer rechercher affcher
+$ gli scaffold telApp Ajouter modifier Supprimer rechercher 
 
 require 'gli'
 require 'rake'

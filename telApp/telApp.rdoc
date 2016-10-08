@@ -1,0 +1,5 @@
+= telApp
+
+Generate this with
+    telApp rdoc
+After you have described your command line interface
