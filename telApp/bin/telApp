@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'gli'
+require 'fileutils'
 begin # XXX: Remove this begin/rescue before distributing your app
 require 'telApp'
 rescue LoadError
@@ -26,54 +27,86 @@ default_value 'the default'
 arg_name 'The name of the argument'
 flag [:f,:flagname]
 
-desc 'Describe Ajouter here'
-arg_name 'Describe arguments to Ajouter here'
-command :Ajouter do |c|
-  c.desc 'Describe a switch to Ajouter'
+desc 'Ajout d\'un contact'
+arg_name 'chaine_a_inserer [fichier...]'
+command :ajouter do |c|
+  c.desc 'Describe a switch to ajouter'
   c.switch :s
 
-  c.desc 'Describe a flag to Ajouter'
+  c.desc 'Describe a flag to ajouter'
   c.default_value 'default'
   c.flag :f
   c.action do |global_options,options,args|
-
-    # Your command logic here
-     
-    # If you have any errors, just raise them
-    # raise "that command made no sense"
-
-    puts "Ajouter command ran"
+      nom, prenom, numero, codePostal, *fichiers = args
+      fichiers << STDIN if fichiers.empty?
+      
+      fichiers.each do |fichier|
+        MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+        MiniSed.ajouter( nom, prenom, numero, codePostal, global,flux.readlines )
+      end
+    end
+    puts "ajouter command ran"
   end
 end
 
-desc 'Describe modifier here'
-arg_name 'Describe arguments to modifier here'
+
+desc 'Modifier un contact'
+arg_name 'nomRech prenomRech numeroRech codePostalRech nom prenom numero codePostal global [fichier...]'
 command :modifier do |c|
   c.action do |global_options,options,args|
+    nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, *fichiers = args
+      fichiers << STDIN if fichiers.empty?
+      fichiers.each do |fichier|
+        MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|  
+        MiniSed.modifier( nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, global, lignes )
+      end
+    end   
     puts "modifier command ran"
   end
 end
 
-desc 'Describe Supprimer here'
-arg_name 'Describe arguments to Supprimer here'
-command :Supprimer do |c|
-  c.action do |global_options,options,args|
-    puts "Supprimer command ran"
+desc 'Supprimer un contact'
+arg_name 'nom prenom [fichier...]'
+command :supprimer do |c|
+  c.action do |global_options,options,args|  
+    nom, prenom, *fichiers = args
+    fichiers << STDIN if fichiers.empty?
+    fichiers.each do |fichier|
+      MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+      MiniSed.delete(nom, prenom, flux.readlines)
+    puts "supprimer command ran"
+      end
+    end
   end
 end
 
-desc 'Describe rechercher here'
-arg_name 'Describe arguments to rechercher here'
+desc 'rechercher un contact'
+arg_name 'nom prenom [fichier...]'
 command :rechercher do |c|
   c.action do |global_options,options,args|
+    nom, prenom, *fichiers = args
+      fichiers << STDIN if fichiers.empty?
+      fichiers.each do |fichier|
+        MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|  
+        MiniSed.rechercher( nom, prenom, lignes )
+      end
+    end
     puts "rechercher command ran"
   end
 end
 
-desc 'Describe affcher here'
-arg_name 'Describe arguments to affcher here'
+desc 'Afficher le contact'
+arg_name 'nom prenom [fichier...]'
 command :affcher do |c|
   c.action do |global_options,options,args|
+    nom, prenom, *fichiers = args
+    fichiers << STDIN if fichiers.empty?
+    
+    fichiers.each do |fichier|
+      MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+      MiniSed.print( nom, prenom, flux.readlines )
+      end
+    end
     puts "affcher command ran"
   end
 end
