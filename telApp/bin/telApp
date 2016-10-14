@@ -41,8 +41,8 @@ command :ajouter do |c|
       fichiers << STDIN if fichiers.empty?
       
       fichiers.each do |fichier|
-        MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-        MiniSed.ajouter( nom, prenom, numero, codePostal, global,flux.readlines )
+        TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+        TelApp.ajouter( nom, prenom, numero, codePostal, global,flux.readlines )
       end
     end
     puts "ajouter command ran"
@@ -57,8 +57,8 @@ command :modifier do |c|
     nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, *fichiers = args
       fichiers << STDIN if fichiers.empty?
       fichiers.each do |fichier|
-        MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|  
-        MiniSed.modifier( nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, global, lignes )
+        TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+          TelApp.modifier( nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, global, lignes )
       end
     end   
     puts "modifier command ran"
@@ -72,8 +72,8 @@ command :supprimer do |c|
     nom, prenom, *fichiers = args
     fichiers << STDIN if fichiers.empty?
     fichiers.each do |fichier|
-      MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-      MiniSed.delete(nom, prenom, flux.readlines)
+      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+        TelApp.delete(nom, prenom, flux.readlines)
     puts "supprimer command ran"
       end
     end
@@ -87,8 +87,8 @@ command :rechercher do |c|
     nom, prenom, *fichiers = args
       fichiers << STDIN if fichiers.empty?
       fichiers.each do |fichier|
-        MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|  
-        MiniSed.rechercher( nom, prenom, lignes )
+        TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+          TelApp.rechercher( nom, prenom, lignes )
       end
     end
     puts "rechercher command ran"
@@ -103,8 +103,8 @@ command :affcher do |c|
     fichiers << STDIN if fichiers.empty?
     
     fichiers.each do |fichier|
-      MiniSed.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-      MiniSed.print( nom, prenom, flux.readlines )
+      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+        TelApp.print( nom, prenom, flux.readlines )
       end
     end
     puts "affcher command ran"
