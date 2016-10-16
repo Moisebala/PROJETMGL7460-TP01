@@ -21,9 +21,10 @@ require'optparse'
   include GLI::App
   program_desc ÕApplication tlphoniqueÕ
   version telApp::VERSION
-  
+  vendor bundle
 
 Option globale : Annuraire =foo.txt , en paramatre pour l'enregistrement des donnees
+
 
 commande Ajouter prend en argument [nom ,prenom,telephone,adresse,ID par defaut]  en commencant par le nom jusqu'a
 l'adresse , seule le ID est attribuer automatiquement a la creation de chaque contact .
