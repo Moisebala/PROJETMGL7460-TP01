@@ -1,0 +1,3 @@
+---
+BUNDLE_PATH: "vendor/bunble"
+BUNDLE_DISABLE_SHARED_GEMS: "true"
