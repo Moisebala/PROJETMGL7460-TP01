@@ -1,5 +1,26 @@
 module TelApp
   
+  def self.traiter_fichier( nom_fichier, ext_in_place = nil )
+  flux = nom_fichier == STDIN ? STDIN : File.open(nom_fichier)
+  
+  resultat = yield( flux )
+  
+  if ext_in_place
+    DBC.assert nom_fichier != STDIN, "*** Pas de traitement"
+    flux.close
+    FileUtils.cp nom_fichier, "#{nom_fichier}#{ext_in_place}"\
+          unless ext_in_place.empty?
+    
+    # open/close explicites pour les tests unitaires!
+    flux = File.open(nom_fichier, "w")
+    flux.puts resultat
+    flux.close
+  else
+    puts resultat
+  end
+  end
+  
+  
   def self.supprimer(nom, prenom, lignes )
     lignes
     .reject { |ligne| /#{nom} and #{prenom}/ =~ ligne }

@@ -28,7 +28,7 @@ arg_name 'The name of the argument'
 flag [:f,:flagname]
 
 desc 'Ajout d\'un contact'
-arg_name 'chaine_a_inserer [fichier...]'
+arg_name 'nom prenom numero codePostal [fichier...]'
 command :ajouter do |c|
   c.desc 'Describe a switch to ajouter'
   c.switch :s
@@ -37,46 +37,77 @@ command :ajouter do |c|
   c.default_value 'default'
   c.flag :f
   c.action do |global_options,options,args|
-        TelApp.ajouter( nom, prenom, numero, codePostal, contacts)
+      nom, prenom, numero, codePostal, *fichiers = args
+      fichiers << STDIN if fichiers.empty?
+      fichiers.each do |fichier|
+      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+      TelApp.ajouter( nom, prenom, numero, codePostal, global,flux.readlines )
     end
     puts "ajouter command ran"
+    end
   end
+end
 
 desc 'Modifier un contact'
 arg_name 'nomRech prenomRech numeroRech codePostalRech nom prenom numero codePostal global [fichier...]'
 command :modifier do |c|
   c.action do |global_options,options,args|
-        TelApp.modifier( nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, global, contacts )
-    end   
+     nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, *fichiers = args
+      fichiers << STDIN if fichiers.empty?
+      fichiers.each do |fichier|
+        TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+        TelApp.modifier( nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, global, lignes )
+    end  
     puts "modifier command ran"
+    end
+  end
 end
 
 desc 'Supprimer un contact'
 arg_name 'nom prenom [fichier...]'
 command :supprimer do |c|
-  c.action do |global_options,options,args|  
+  c.action do |global_options,options,args|
+    nom, prenom, *fichiers = args
+    fichiers << STDIN if fichiers.empty?
+      fichiers.each do |fichier|
+      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
       TelApp.delete(nom, prenom, contacts)
-      end
+    end
     puts "supprimer command ran"
+    end
+  end
 end
 
 desc 'rechercher un contact'
 arg_name 'nom prenom [fichier...]'
 command :rechercher do |c|
   c.action do |global_options,options,args|
-        TelApp.rechercher( nom, prenom, contacts )
-      end
+    nom, prenom, *fichiers = args
+    fichiers << STDIN if fichiers.empty?
+      fichiers.each do |fichier|
+      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+      TelApp.rechercher( nom, prenom, contacts )
+    end
     puts "rechercher command ran"
+    end
+  end
 end
 
 desc 'Afficher le contact'
 arg_name 'nom prenom [fichier...]'
 command :affcher do |c|
   c.action do |global_options,options,args|
-      TelApp.print( nom, prenom, contacts )
+    nom, prenom, *fichiers = args
+    fichiers << STDIN if fichiers.empty?
+      fichiers.each do |fichier|
+      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
+      TelApp.afficher( nom, prenom, contacts )
       end
     puts "affcher command ran"
+    end
+  end
 end
+
 
 pre do |global,command,options,args|
   # Pre logic here
