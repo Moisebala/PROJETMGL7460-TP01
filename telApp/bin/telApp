@@ -37,78 +37,45 @@ command :ajouter do |c|
   c.default_value 'default'
   c.flag :f
   c.action do |global_options,options,args|
-      nom, prenom, numero, codePostal, *fichiers = args
-      fichiers << STDIN if fichiers.empty?
-      
-      fichiers.each do |fichier|
-        TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-        TelApp.ajouter( nom, prenom, numero, codePostal, global,flux.readlines )
-      end
+        TelApp.ajouter( nom, prenom, numero, codePostal, contacts)
     end
     puts "ajouter command ran"
   end
-end
-
 
 desc 'Modifier un contact'
 arg_name 'nomRech prenomRech numeroRech codePostalRech nom prenom numero codePostal global [fichier...]'
 command :modifier do |c|
   c.action do |global_options,options,args|
-    nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, *fichiers = args
-      fichiers << STDIN if fichiers.empty?
-      fichiers.each do |fichier|
-        TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-          TelApp.modifier( nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, global, lignes )
-      end
+        TelApp.modifier( nomRech, prenomRech, numeroRech, codePostalRech, nom, prenom, numero, codePostal, global, contacts )
     end   
     puts "modifier command ran"
-  end
 end
 
 desc 'Supprimer un contact'
 arg_name 'nom prenom [fichier...]'
 command :supprimer do |c|
   c.action do |global_options,options,args|  
-    nom, prenom, *fichiers = args
-    fichiers << STDIN if fichiers.empty?
-    fichiers.each do |fichier|
-      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-        TelApp.delete(nom, prenom, flux.readlines)
-    puts "supprimer command ran"
+      TelApp.delete(nom, prenom, contacts)
       end
-    end
-  end
+    puts "supprimer command ran"
 end
 
 desc 'rechercher un contact'
 arg_name 'nom prenom [fichier...]'
 command :rechercher do |c|
   c.action do |global_options,options,args|
-    nom, prenom, *fichiers = args
-      fichiers << STDIN if fichiers.empty?
-      fichiers.each do |fichier|
-        TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-          TelApp.rechercher( nom, prenom, lignes )
+        TelApp.rechercher( nom, prenom, contacts )
       end
-    end
     puts "rechercher command ran"
-  end
 end
 
 desc 'Afficher le contact'
 arg_name 'nom prenom [fichier...]'
 command :affcher do |c|
   c.action do |global_options,options,args|
-    nom, prenom, *fichiers = args
-    fichiers << STDIN if fichiers.empty?
-    
-    fichiers.each do |fichier|
-      TelApp.traiter_fichier( fichier, global_options[:in_place] ) do |flux|
-        TelApp.print( nom, prenom, flux.readlines )
+      TelApp.print( nom, prenom, contacts )
       end
-    end
     puts "affcher command ran"
-  end
 end
 
 pre do |global,command,options,args|
