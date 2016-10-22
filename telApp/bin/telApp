@@ -31,4 +31,22 @@ command :afficher do |c|
 end
 
 
+  desc 'ajouter un contact'
+  arg_name 'nom prenom [fichier...]'
+  command :ajouter do |c|
+    c.action do |global_options,options,args|
+      #TelApp.delete(nom, prenom, contacts)
+      TelApp.ajouter
+    end
+  end
+
+desc 'rechercher un contact'
+arg_name 'nom prenom [fichier...]'
+command :rechercher do |c|
+  c.action do |global_options,options,args|
+    TelApp.rechercher("sofiane")
+  end
+
+end
+
 exit run(ARGV)

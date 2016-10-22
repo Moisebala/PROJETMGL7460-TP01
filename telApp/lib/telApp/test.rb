@@ -20,4 +20,15 @@ def self.aff
   contact.numeroTel="514374758"
   puts.contact
 
+  bd.readlines("contacts.txt").each do |line|
+    result = line.split(",")
+    result.each do |value| if/#{nom}/=~value
+                             puts value
+
+                           end
+
+    end
+
 end
+end
+

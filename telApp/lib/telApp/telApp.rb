@@ -13,17 +13,33 @@ module TelApp
     end
 
   end
-  def self.afficher
-    contact = Contact.new
-    contact.nom="Moussa"
-    contact.prenom="Balla"
-    contact.numeroTel="514374758"
-    puts contact
 
+  def self.afficher
+
+   bd=File.open("contacts.txt","a+")
+   bd.readlines("contacts.txt").each do |line|
+   puts line
+   bd.close
+
+   end
   end
-  def self.montest
+
+  def self.ajouter
 
     puts 'Mon test a marche'
 
   end
+
+  def self.rechercher(nom)
+    bd=File.open("contacts.txt","a+")
+    bd.readlines("contacts.txt").each do |line|
+      result = line.split(",")
+      result.each do |value| if/#{nom}/=~value
+                               puts value
+
+                             end
+      end
+    end
+  end
+
 end
