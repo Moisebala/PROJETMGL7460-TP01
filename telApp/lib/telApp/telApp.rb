@@ -9,7 +9,7 @@ module TelApp
     end
 
     def to_s
-      "" + @nom + "," + @prenom + "," + @numeroTel + "\n"
+      "" + @nom + "," + @prenom + "," + @numeroTel + ""
     end
 
   end
@@ -26,13 +26,21 @@ module TelApp
 
   def self.ajouter
 
-    puts 'Mon test a marche'
+    contact= Contact.new
+    puts 'nom :'
+    contact.nom=gets
+    puts 'prenom :'
+    contact.prenom=gets
+    puts 'numero:'
+    contact.numeroTel=gets
+    
+    puts  contact
 
   end
 
   def self.rechercher(nom)
     bd=File.open("contacts.txt","a+")
-    bd.readlines("contacts.txt").each do |line|
+    bd.each_line("contacts.txt") do |line|
       result = line.split(",")
       result.each do |value| if/#{nom}/=~value
                                puts value
