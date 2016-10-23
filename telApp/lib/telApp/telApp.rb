@@ -9,7 +9,7 @@ module TelApp
     end
 
     def to_s
-      "" + @nom + "," + @prenom + "," + @numeroTel + ""
+      "\n" + @nom + "," + @prenom + "," + @numeroTel + ""
     end
 
   end
@@ -25,17 +25,18 @@ module TelApp
   end
 
   def self.ajouter
-
+    bd=File.open("contacts.txt","a+")
     contact= Contact.new
     puts 'nom :'
-    contact.nom=gets
+    contact.nom=gets.chomp
     puts 'prenom :'
-    contact.prenom=gets
+    contact.prenom=gets.chomp
     puts 'numero:'
-    contact.numeroTel=gets
-    
+    contact.numeroTel=gets.chomp
+    puts "\nLe contact a ete ajouter avec succes :"
     puts  contact
-
+    bd.puts(contact)
+    bd.close
   end
 
   def self.rechercher(nom)

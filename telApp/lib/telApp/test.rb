@@ -13,6 +13,18 @@ class Contact
   end
 
 end
+
+def ouvre_fichier(nom_fichier)
+  begin
+    fichier = File.open(nom_fichier, "a+")
+  rescue
+    #demande à l'utilisateur de saisir le nom du fichier
+    puts "Le fichier n'a pas pu être ouvert, merci de saisir un nom correct"
+    nom_fichier = gets.chomp
+    retry
+  end
+end
+
 def self.aff
   contact = Contact.new
   contact.nom="Moussa"
