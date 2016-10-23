@@ -9,7 +9,7 @@ module TelApp
     end
 
     def to_s
-      "\n" + @nom + "," + @prenom + "," + @numeroTel + ""
+      ""+ @nom +"," + @prenom +"," + @numeroTel +""
     end
 
   end
@@ -33,7 +33,7 @@ module TelApp
     contact.prenom=gets.chomp
     puts 'numero:'
     contact.numeroTel=gets.chomp
-    puts "\nLe contact a ete ajouter avec succes :"
+    puts "Le contact a ete ajouter avec succes :"
     puts  contact
     bd.puts(contact)
     bd.close
