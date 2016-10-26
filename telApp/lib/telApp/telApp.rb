@@ -40,15 +40,13 @@ module TelApp
   end
 
   def self.rechercher(nom)
-    bd=File.open("contacts.txt","a+")
-    bd.each_line("contacts.txt") do |line|
-      result = line.split(",")
-      result.each do |value| if/#{nom}/=~value
-                               puts value
-
-                             end
-      end
+     File.open("contacts.txt","r+") do |f|
+   f.each do |line|
+   
+    if line.match( /#{nom}/i )
+     print line
+    end
+    end
     end
   end
-
 end
