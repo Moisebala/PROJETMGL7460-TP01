@@ -14,6 +14,24 @@ module TelApp
 
   end
   
+    def self.modifier(nom,numeroTel)
+    
+      File.open("contacts.txt","a+") do |f|
+    f.each do |line|
+     
+    if line.match( /#{nom}/i )
+      
+     value = line.split(",")
+      
+      value[2]= numeroTel
+    
+     print value [2]
+  
+    end
+    end
+    end
+    end
+  
   def self.supprimer(nom)
     
       File.open("contacts.txt","w+") do |f|
