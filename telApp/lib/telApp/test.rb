@@ -1,19 +1,4 @@
 
-
-class Contact
-
-  attr_accessor :nom, :prenom,:numeroTel
-
-  def initialize
-    @nom=@prenom=@numeroTel=""
-  end
-
-  def to_s
-    "    " + @nom + "," + @prenom + ", " + @numeroTel + "\n"
-  end
-
-end
-
 def ouvre_fichier(nom_fichier)
   begin
     fichier = File.open(nom_fichier, "a+")
