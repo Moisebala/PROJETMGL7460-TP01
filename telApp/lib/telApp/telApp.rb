@@ -1,5 +1,5 @@
 module TelApp
-
+require 'test'
   class Contact
 
     attr_accessor :nom, :prenom,:numeroTel
