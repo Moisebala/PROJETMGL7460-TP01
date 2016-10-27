@@ -4,8 +4,8 @@
     <list default="true" id="d322a928-42c7-4832-99c7-1bd015f49089" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/bin/telApp" afterPath="$PROJECT_DIR$/telApp/bin/telApp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/contacts.txt" afterPath="$PROJECT_DIR$/telApp/contacts.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" afterPath="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/lib/telApp/test.rb" afterPath="$PROJECT_DIR$/telApp/lib/telApp/test.rb" />
     </list>
     <ignored path="PROJETMGL7460-TP01.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,18 +49,18 @@
       <file leaf-file-name="telApp.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/telApp.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="450">
+              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="telApp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="telApp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/telApp/bin/telApp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,10 +85,10 @@
         <option value="$PROJECT_DIR$/telApp/Rakefile" />
         <option value="$PROJECT_DIR$/telApp/lib/telApp.rb" />
         <option value="$PROJECT_DIR$/telApp/bin/contacts.txt" />
+        <option value="$PROJECT_DIR$/telApp/lib/telApp/test.rb" />
         <option value="$PROJECT_DIR$/telApp/contacts.txt" />
         <option value="$PROJECT_DIR$/telApp/bin/telApp" />
         <option value="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" />
-        <option value="$PROJECT_DIR$/telApp/lib/telApp/test.rb" />
       </list>
     </option>
   </component>
@@ -129,6 +129,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -163,8 +165,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,7 +338,9 @@
       <workItem from="1477231367543" duration="3611000" />
       <workItem from="1477237341181" duration="651000" />
       <workItem from="1477520188187" duration="326000" />
-      <workItem from="1477525501767" duration="539000" />
+      <workItem from="1477525501767" duration="2719000" />
+      <workItem from="1477605497617" duration="4256000" />
+      <workItem from="1477611886019" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Definition des fonctionnalites .">
       <created>1475452357700</created>
@@ -445,17 +447,24 @@
       <option name="project" value="LOCAL" />
       <updated>1477520299657</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="module test implementer">
+      <created>1477526061416</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1477526061416</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33192000" />
+    <option name="totallyTimeSpent" value="39639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1260" height="687" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.363711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15353037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -515,7 +524,8 @@
     <MESSAGE value="ajouter contact &#10;" />
     <MESSAGE value="ajouter contact  ligne differente" />
     <MESSAGE value="ajout de class contact" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de class contact" />
+    <MESSAGE value="module test implementer" />
+    <option name="LAST_COMMIT_MESSAGE" value="module test implementer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -873,31 +883,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/telApp/contacts.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telApp/bin/telApp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/telApp.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="450">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/telApp/bin/telApp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

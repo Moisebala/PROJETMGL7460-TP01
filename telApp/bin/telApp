@@ -18,33 +18,48 @@ version TelApp::VERSION
 
 # Use argument validation
 arguments :strict
+
 desc 'Describe some switch here'
 
 
 desc 'Afficher un contact'
-arg_name 'nom prenom [fichier...]'
+arg_name '[fichier...]'
 command :afficher do |c|
   c.action do |global_options,options,args|
-      #TelApp.delete(nom, prenom, contacts)
-    TelApp.afficher
+    nom_fichier=args[0]
+    TelApp.afficher(nom_fichier)
   end
 end
 
 
   desc 'ajouter un contact'
-  arg_name 'nom prenom [fichier...]'
+  arg_name 'nom prenom telephone [fichier...]'
   command :ajouter do |c|
     c.action do |global_options,options,args|
-      #TelApp.delete(nom, prenom, contacts)
-      TelApp.ajouter
+      nom,prenom,telephone, nom_fichier=args[0..4]
+      TelApp.ajouter(nom,prenom,telephone,nom_fichier)
     end
   end
 
 desc 'rechercher un contact'
-arg_name 'nom prenom [fichier...]'
+arg_name 'nom [fichier...]'
 command :rechercher do |c|
   c.action do |global_options,options,args|
-    TelApp.rechercher('moussa')
+    nom =args[0]
+    nom_fichier=args[1]
+    TelApp.rechercher(nom,nom_fichier)
+
+  end
+
+end
+
+desc 'Supprimer un contact'
+arg_name 'nom prenom [fichier...]'
+command :supprimer do |c|
+  c.action do |global_options,options,args|
+    nom,prenom,nom_fichier=args[0..3]
+
+    TelApp.supprimer(nom,prenom,nom_fichier)
 
   end
 
