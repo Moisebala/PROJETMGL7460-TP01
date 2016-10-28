@@ -20,24 +20,27 @@ version TelApp::VERSION
 arguments :strict
 
 desc 'Describe some switch here'
+default_value 'contacts.txt'
+flag [:f, :fichier]
 
 
 desc 'Afficher un contact'
 arg_name '[fichier...]'
 command :afficher do |c|
   c.action do |global_options,options,args|
-    nom_fichier=args[0]
-    TelApp.afficher(nom_fichier)
+     fichier=global_options[:fichier]
+    TelApp.afficher(fichier)
   end
 end
 
 
-  desc 'ajouter un contact'
+desc 'ajouter un contact'
   arg_name 'nom prenom telephone [fichier...]'
   command :ajouter do |c|
     c.action do |global_options,options,args|
-      nom,prenom,telephone, nom_fichier=args[0..4]
-      TelApp.ajouter(nom,prenom,telephone,nom_fichier)
+      nom,prenom,telephone=args[0..2]
+      fichier =global_options[:fichier]
+      TelApp.ajouter(nom,prenom,telephone,fichier)
     end
   end
 
@@ -46,8 +49,8 @@ arg_name 'nom [fichier...]'
 command :rechercher do |c|
   c.action do |global_options,options,args|
     nom =args[0]
-    nom_fichier=args[1]
-    TelApp.rechercher(nom,nom_fichier)
+    fichier=global_options[:fichier]
+    TelApp.rechercher(nom,fichier)
 
   end
 
@@ -57,9 +60,9 @@ desc 'Supprimer un contact'
 arg_name 'nom prenom [fichier...]'
 command :supprimer do |c|
   c.action do |global_options,options,args|
-    nom,prenom,nom_fichier=args[0..3]
-
-    TelApp.supprimer(nom,prenom,nom_fichier)
+    nom,prenom=args[0..1]
+    fichier=global_options[:fichier]
+    TelApp.supprimer(nom,prenom,fichier)
 
   end
 

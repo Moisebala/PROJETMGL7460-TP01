@@ -14,9 +14,9 @@ module TelApp
 
   end
   
-    def self.modifier(nom,numeroTel)
-    
-      File.open("contacts.txt","a+") do |f|
+    def self.modifier(nom,numeroTel,nom_fichier)
+
+      File.open(nom_fichier,"a+") do |f|
     f.each do |line|
      
     if line.match( /#{nom}/i )
@@ -70,7 +70,6 @@ module TelApp
   def self.rechercher(nom,nom_fichier)
      File.open(nom_fichier,"r+") do |f|
    f.each do |line|
-   
     if line.match( /#{nom}/i )
      puts line
     end
