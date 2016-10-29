@@ -14,64 +14,74 @@ module TelApp
 
   end
   
-    def self.modifier(nom,numeroTel,nom_fichier)
+    def self.modifier(nom,numero,nom_fichier)
+      contact=Contact.new
+      rep=[]
+      bd=File.open(nom_fichier,"a+")
+      bd.each_line { |line|
+        rep<<line }
+      rep.each { |line| value=line.split(',')
+      for name in value
+        if  name.match (/#{nom}/i)
+          contact.nom =value[0]
+          contact.prenom =value[1]
+         contact.numeroTel =numero
+        end
 
-      File.open(nom_fichier,"a+") do |f|
-    f.each do |line|
-     
-    if line.match( /#{nom}/i )
-      
-     value = line.split(",")
-      
-      value[2]= numeroTel
-    
-     print value [2]
-  
-    end
-    end
-    end
-    end
-  
-  def self.supprimer(nom,prenom,nom_fichier)
+      end
+      }
+      rep.push contact
+      puts rep
 
-      File.open(nom_fichier,"w+") do |f|
-   f.each do |line|
-     
-    if line.match( /#{nom} and #{prenom}/i )
-     line.reject
-     
     end
-    end
-    end
+
+
+  def self.supprimer(nom,nom_fichier)
+     rep=[]
+     bd=File.open(nom_fichier,"a+")
+     bd.each_line { |line|
+       rep<<line unless line.match(/#{nom}/i)
+       }
+     bd.close
+    bd = File.open(nom_fichier,"w+")
+     puts rep
+    bd.puts(rep)
+    bd.close
   end
+
 
   def self.afficher(nom_fichier)
+   rep=[]
 
-   bd=File.open(nom_fichier,"a+")
-   bd.readlines(nom_fichier).each do |line|
-   puts line
-   bd.close
+   bd = File.open(nom_fichier,"r+")
+       bd.each_line { |line|
+         rep<<line}
+    puts rep
 
-   end
   end
 
+
   def self.ajouter(nom,prenom,numeroTel,nom_fichier)
+    rep=[]
     bd=File.open(nom_fichier,"a+")
     contact= Contact.new
     contact.nom=nom
     contact.prenom=prenom
     contact.numeroTel=numeroTel
     puts "Le contact a ete ajouter avec succes :"
-    puts  contact
-    bd.puts(contact)
+    rep.push contact
+    puts contact
+    bd.puts(rep)
     bd.close
   end
 
   def self.rechercher(nom,nom_fichier)
-     File.open(nom_fichier,"r+") do |f|
-   f.each do |line|
+
+   bd = File.open(nom_fichier,"r+") do |f|
+     f.each  do |line|
     if line.match( /#{nom}/i )
-     puts line
+       puts line
+
     end
     end
     end
