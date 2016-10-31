@@ -4,8 +4,9 @@ module TelApp
       contact = Contact.new
       rep = []
       bd = File.open(nom_fichier,"a+")
-      bd.each_line { |line|
-        rep << line }
+      bd.each_line do |line|
+        rep << line
+      end
       rep.each { |line| value = line.split(',')
       for name in value
         if  name.match (/#{nom}/i)
@@ -24,11 +25,11 @@ module TelApp
 
 
   def self.supprimer(nom,nom_fichier)
-     rep = []
+    rep = []
      bd = File.open(nom_fichier,"a+")
-     bd.each_line { |line|
+     bd.each_line do |line|
        rep << line unless line.match(/#{nom}/i)
-       }
+       end
      bd.close
     bd = File.open(nom_fichier,"w+")
      puts rep
@@ -40,9 +41,10 @@ module TelApp
   def self.afficher(nom_fichier)
    rep = []
 
-   bd = File.open(nom_fichier,"r+")
-       bd.each_line { |line|
-         rep << line}
+   bd = File.open(nom_fichier,"a+")
+       bd.each_line do |line|
+         rep << line
+         end
     puts rep
 
   end
@@ -64,8 +66,9 @@ module TelApp
 
   def self.rechercher(nom,nom_fichier)
     rep = []
-   bd = File.open(nom_fichier,"r+")
-   bd.each_line { |line| rep << line}
+   bd = File.open(nom_fichier,"a+")
+   bd.each_line do |line| rep << line
+   end
      rep.each  do |line|
      if line.match( /#{nom}/i )
        puts line

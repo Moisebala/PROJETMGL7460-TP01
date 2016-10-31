@@ -1,17 +1,25 @@
 module Fichier
 
-def ouvre_fichier(nom_fichier)
-  repertoire =[]
-  if File.exist?(nom_fichier)
-  bd = File.open(nom_fichier,"r+")
-  bd.each_line { |line|
-    repertoire.push line}
+def  self.ouvre_fichier(nom_fichier,repertoire)
 
+  if File.exist?(nom_fichier)
+  bd = File.open(nom_fichier,"a+")
+  bd.each_line { |line|
+    repertoire << line}
   bd.close
 
   end
-  return repertoire
 end
+  def self.ecrire_fichier(nom_fichier ,repertoire)
+
+    if File.exist?(nom_fichier)
+    bd = File.open(nom_fichier,"w+")
+    bd.puts(repertoire)
+    bd.close
+
+  end
+
+ end
 
 end
 
