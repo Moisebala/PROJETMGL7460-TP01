@@ -4,8 +4,9 @@ def  self.ouvre_fichier(nom_fichier,repertoire)
 
   if File.exist?(nom_fichier)
   bd = File.open(nom_fichier,"a+")
-  bd.each_line { |line|
-    repertoire << line}
+  bd.each_line do |line|
+    repertoire << line
+    end
   bd.close
 
   end

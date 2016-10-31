@@ -3,3 +3,4 @@ require 'telApp/version.rb'
 # you just need to require this one file in your bin file
 require 'telApp/telApp'
 require 'telApp/contact'
+require 'telApp/test'
