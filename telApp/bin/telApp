@@ -29,7 +29,8 @@ arg_name '[fichier...]'
 command :afficher do |c|
   c.action do |global_options,options,args|
      fichier = global_options[:fichier]
-    TelApp.afficher(fichier)
+    tout_contact =TelApp.afficher(fichier)
+    puts tout_contact
   end
 end
 
@@ -40,7 +41,9 @@ desc 'ajouter un contact'
     c.action do |global_options,options,args|
       nom, prenom, telephone=args[0..2]
       fichier = global_options[:fichier]
-      TelApp.ajouter(nom, prenom, telephone, fichier)
+      contact_ajouter = TelApp.ajouter(nom, prenom, telephone, fichier)
+      puts "Le contact a ete ajouter avec succes :"
+      puts contact_ajouter
     end
   end
 
@@ -50,7 +53,8 @@ command :rechercher do |c|
   c.action do |global_options,options,args|
     nom = args[0]
     fichier = global_options[:fichier]
-    TelApp.rechercher(nom, fichier)
+    contact_rechercher =TelApp.rechercher(nom, fichier)
+    puts contact_rechercher
   end
 end
 
@@ -60,7 +64,8 @@ command :supprimer do |c|
   c.action do |global_options,options,args|
     nom = args[0]
     fichier = global_options[:fichier]
-      TelApp.supprimer(nom, fichier)
+      contact_sup = TelApp.supprimer(nom, fichier)
+      puts  contact_sup
     end
   end
 

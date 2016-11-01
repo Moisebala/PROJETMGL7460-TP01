@@ -18,7 +18,7 @@ module TelApp
     
   def self.copieTableau(contact, nom,nom_fichier)
     rep2 = []
-    
+
      bd = File.open(nom_fichier,"a+")
      bd.each_line do |line|
        rep2 << line unless line.match(/#{nom}/i)
@@ -38,14 +38,14 @@ module TelApp
        end
      bd.close
     Fichier.ecrire_fichier(nom_fichier, rep)
-    puts rep
+    return rep
   end
 
 
   def self.afficher(nom_fichier)
    rep = []
    Fichier.ouvre_fichier(nom_fichier, rep)
-    puts rep
+    return rep
 
   end
 
@@ -57,9 +57,8 @@ module TelApp
     contact.nom = nom
     contact.prenom = prenom
     contact.numeroTel = numeroTel
-    puts "Le contact a ete ajouter avec succes :"
     rep.push contact
-    puts contact
+    return contact
     Fichier.ecrire_fichier(nom_fichier, rep)
   end
 
@@ -68,7 +67,7 @@ module TelApp
     Fichier.ouvre_fichier(nom_fichier, rep)
      rep.each  do |line|
      if line.match( /#{nom}/i )
-       puts line
+       return line
 
      end
     end
