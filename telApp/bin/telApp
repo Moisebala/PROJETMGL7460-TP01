@@ -65,7 +65,8 @@ command :supprimer do |c|
     nom = args[0]
     fichier = global_options[:fichier]
       contact_sup = TelApp.supprimer(nom, fichier)
-      puts  contact_sup
+      puts contact_sup
+      puts "a ete supprimer avec succes"
     end
   end
 
@@ -76,8 +77,9 @@ desc 'modifier un contact'
     c.action do |global_options,options,args|
       nom, numero = args[0..1]
       fichier = global_options[:fichier]
-      TelApp.modifier(nom, numero, fichier)
-
+      contact_mod = TelApp.modifier(nom, numero, fichier)
+      puts contact_mod
+      puts "a ete modifier "
     end
   end
 

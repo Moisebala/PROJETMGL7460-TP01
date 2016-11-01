@@ -2,9 +2,9 @@ module TelApp
 
   def self.modifier(nom,numero,nom_fichier)
     contact = Contact.new
-    rep = []    
+    rep = []
     Fichier.ouvre_fichier(nom_fichier, rep)
-    rep.each { |line| value = line.split(',')
+    rep.each do |line| value = line.split(',')
       value.each  do |name|
       if name.match( /#{nom}/i )
           contact.nom = value[0]
@@ -12,33 +12,39 @@ module TelApp
           contact.numeroTel = value[2]
           contact.numeroTel = numero
       end
-    end}
-      copieTableau(contact,nom,nom_fichier)
+      end
+    end
+    copieTableau(contact, nom,nom_fichier)
+    return contact
   end
-    
+
+
   def self.copieTableau(contact, nom,nom_fichier)
-    rep2 = []
-
-     bd = File.open(nom_fichier,"a+")
-     bd.each_line do |line|
-       rep2 << line unless line.match(/#{nom}/i)
-       end
-      bd.close
-       rep2.push contact
-       Fichier.ecrire_fichier(nom_fichier, rep2)
-       puts rep2
+    rep = []
+    rep2 =[]
+    Fichier.ouvre_fichier(nom_fichier, rep)
+    rep.each do |line| unless line.match(/#{nom}/i)
+                         rep2 << line
+                       end
+    end
+    rep2.push contact
+    Fichier.ecrire_fichier(nom_fichier, rep2)
   end
-
 
   def self.supprimer(nom,nom_fichier)
     rep = []
-     bd = File.open(nom_fichier,"a+")
-     bd.each_line do |line|
-       rep << line unless line.match(/#{nom}/i)
-       end
-     bd.close
-    Fichier.ecrire_fichier(nom_fichier, rep)
-    return rep
+    rep2=[]
+    Fichier.ouvre_fichier(nom_fichier, rep)
+    rep.each do |line| unless line.match(/#{nom}/i)
+                  rep2 << line
+                       end
+    end
+    Fichier.ecrire_fichier(nom_fichier, rep2)
+    rep.each do |line|
+      if line.match( /#{nom}/i )
+        return line
+      end
+    end
   end
 
 
@@ -46,20 +52,19 @@ module TelApp
    rep = []
    Fichier.ouvre_fichier(nom_fichier, rep)
     return rep
-
   end
 
 
   def self.ajouter(nom,prenom,numeroTel,nom_fichier)
     rep = []
-    Fichier.ouvre_fichier(nom_fichier, rep)
+    Fichier.ouvre_fichier(nom_fichier , rep)
     contact = Contact.new
     contact.nom = nom
     contact.prenom = prenom
     contact.numeroTel = numeroTel
     rep.push contact
-    return contact
     Fichier.ecrire_fichier(nom_fichier, rep)
+    return rep
   end
 
   def self.rechercher(nom,nom_fichier)
