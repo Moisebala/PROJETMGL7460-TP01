@@ -14,7 +14,7 @@ module TelApp
       end
       end
     end
-    Fichier.copieTableau(contact, nom,nom_fichier)
+    Tableau.copieTableau(contact, nom,nom_fichier)
     return contact
   end
 
@@ -28,7 +28,7 @@ module TelApp
                        end
     end
     Fichier.ecrire_fichier(nom_fichier, rep2)
-    Fichier.trouver_contact(rep , nom)
+    Tableau.trouver_contact(rep , nom)
   end
 
 
@@ -55,6 +55,6 @@ module TelApp
   def self.rechercher(nom,nom_fichier)
     rep = []
     Fichier.ouvrir_fichier(nom_fichier, rep)
-    Fichier.trouver_contact(rep , nom)
+    Tableau.trouver_contact(rep , nom)
   end
 end
