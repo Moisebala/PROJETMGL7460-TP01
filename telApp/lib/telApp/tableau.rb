@@ -3,13 +3,13 @@ module Tableau
   def self.copieTableau(contact, nom,nom_fichier)
     rep = []
     rep2 =[]
-    ouvrir_fichier(nom_fichier, rep)
+    Fichier.ouvrir_fichier(nom_fichier, rep)
     rep.each do |line| unless line.match(/#{nom}/i)
                          rep2 << line
                        end
     end
     rep2.push contact
-    ecrire_fichier(nom_fichier, rep2)
+    Fichier.ecrire_fichier(nom_fichier, rep2)
   end
 
 
