@@ -1,4 +1,3 @@
-#!! Cette classe devrait etre dans le fichier contact.rb.
 class Contact
 
   attr_accessor :nom, :prenom, :numeroTel

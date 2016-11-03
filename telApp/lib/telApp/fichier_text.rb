@@ -15,7 +15,7 @@ end
     bd = File.open(nom_fichier,"w+")
     bd.puts(repertoire)
     bd.close
-  end
+    end
   end
 
 end
