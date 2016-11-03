@@ -6,7 +6,6 @@ class Contact
     @nom = @prenom = @numeroTel = ""
   end
 
-
   def to_s
     "" + @nom + "," + @prenom + "," + @numeroTel + ""
   end

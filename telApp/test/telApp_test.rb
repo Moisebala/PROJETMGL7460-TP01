@@ -1,6 +1,6 @@
 require 'test_helper'
 require  'telApp'
-  
+
   def test_supprimer_supprime_un_contact_affiche_nouvelle_liste
     rep=["moussa, balla, 5149876543", "sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
     newRep=["sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
@@ -20,6 +20,7 @@ require  'telApp'
   end
   
   def test_afficher_affiche_la_liste_contact_de_bdt
+
     rep=["moussa, balla, 5149876543", "sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
     afficher( rep )
     assert_match (rep[0]),"moussa, balla, 5149876543"
@@ -32,6 +33,7 @@ require  'telApp'
     nom="moussa"
     res=rechercher( nom,rep )
     assert_match (res),"moussa, balla, 5149876543"
+    end
   
   def test_ajouter_ajoute_un_contact_affiche_le_nouveau_contact
     rep=["moussa, balla, 5149876543", "sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
@@ -41,5 +43,4 @@ require  'telApp'
     assert_match (res[0]),contact[0]
     assert_match (res[1]),contact[1]
     assert_match (res[2]),contact[2]
-  end
   end
