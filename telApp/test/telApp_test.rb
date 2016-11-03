@@ -1,5 +1,6 @@
 require 'test_helper'
 require  'telApp'
+  
   def test_supprimer_supprime_un_contact_affiche_nouvelle_liste
     rep=["moussa, balla, 5149876543", "sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
     newRep=["sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
