@@ -29,7 +29,7 @@ arg_name '[fichier...]'
 command :afficher do |c|
   c.action do |global_options,options,args|
      fichier = global_options[:fichier]
-     TelApp.nom_fichier =fichier
+     TelApp.nom_fichier = fichier
     tout_contact =TelApp.afficher()
     puts tout_contact
   end

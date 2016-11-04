@@ -33,9 +33,10 @@ module TelApp
 
 
   def self.afficher()
-   rep = []
-   Fichier.ouvrir_fichier(nom_fichier, rep)
-   return rep
+    rep=[]
+    Fichier.ouvrir_fichier(nom_fichier,rep)
+    return rep
+
   end
 
 

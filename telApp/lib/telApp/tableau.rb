@@ -20,5 +20,4 @@ module Tableau
     end
   end
 
-
 end
