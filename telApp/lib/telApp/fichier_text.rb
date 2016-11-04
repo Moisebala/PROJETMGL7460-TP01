@@ -7,7 +7,6 @@ def  self.ouvrir_fichier(nom_fichier,repertoire)
     repertoire << line
     end
   bd.close
-
   end
 end
   def self.ecrire_fichier(nom_fichier ,repertoire)

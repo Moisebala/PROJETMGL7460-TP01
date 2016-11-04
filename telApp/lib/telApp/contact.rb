@@ -1,13 +1,16 @@
 class Contact
 
-  attr_accessor :nom, :prenom, :numeroTel
+  attr_reader :nom, :prenom, :numeroTel
 
-  def initialize
-    @nom = @prenom = @numeroTel = ""
+  def initialize(nom, prenom, numero)
+    @nom = nom
+        @prenom =prenom
+            @numeroTel = numero
   end
 
   def to_s
-    "" + @nom + "," + @prenom + "," + @numeroTel + ""
+    @nom + "," + @prenom + "," + @numeroTel
+
   end
 
 

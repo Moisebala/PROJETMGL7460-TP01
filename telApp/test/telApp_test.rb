@@ -1,6 +1,8 @@
 require 'test_helper'
 require  'telApp'
 
+class TelAppTest < Test::Unit::TestCase
+
   def test_supprimer_supprime_un_contact_affiche_nouvelle_liste
     rep=["moussa, balla, 5149876543", "sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
     newRep=["sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
@@ -32,7 +34,7 @@ require  'telApp'
     rep=["moussa, balla, 5149876543", "sofiane, faidi, 5144439876", "guy, tremblay, 5146665432"]
     nom="moussa"
     res=rechercher( nom,rep )
-    assert_match (res),"moussa, balla, 5149876543"
+    assert_match (res),/moussa.*balla.*5149876543/
     end
   
   def test_ajouter_ajoute_un_contact_affiche_le_nouveau_contact
@@ -43,4 +45,5 @@ require  'telApp'
     assert_match (res[0]),contact[0]
     assert_match (res[1]),contact[1]
     assert_match (res[2]),contact[2]
+  end
   end
