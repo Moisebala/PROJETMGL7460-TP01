@@ -9,28 +9,27 @@ module TelApp
 
     rep = []
     Fichier.ouvrir_fichier(nom_fichier, rep)
-    rep.each do |line| value = line.split(',')
-    value.each  do |name|
-      if name.match( /#{nom}/i )
-        contact = Contact.new(nom,value[1],numero)
+    rep.select do |contact|
+      if contact.nom.match( /#{nom}/i ) then
+        @numeroTel = numero
       end
-      Tableau.copieTableau(contact, nom,nom_fichier)
+      return rep
     end
     end
-  end
 
 
   def self.supprimer(nom)
     rep = []
-    rep2=[]
+    rep2 =[]
     Fichier.ouvrir_fichier(nom_fichier, rep)
-    rep.each do |line| unless line.match(/#{nom}/i)
-                         rep2 << line
-                       end
+    rep.each do |contact| unless contact.nom.match(/#{nom}/i)
+                            rep2 << contact
+                          end
     end
     Fichier.ecrire_fichier(nom_fichier, rep2)
     Tableau.trouver_contact(rep , nom)
   end
+
 
 
   def self.afficher()
