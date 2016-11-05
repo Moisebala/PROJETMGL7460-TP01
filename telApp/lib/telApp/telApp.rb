@@ -4,16 +4,14 @@ module TelApp
     attr_accessor :nom_fichier
   end
 
-  def self.modifier(nom, numero, nom_fichier)
+  def self.modifier(nom, numero)
   rep = []
   Fichier.ouvrir_fichier(nom_fichier, rep)
   rep.each do |contact|
     if contact.nom.match( /#{nom}/i )
-      contact2=Contact.new(contact.nom, contact.prenom, numero)
+       contact.numeroTel=numero
     end
-
   end
-  Tableau.copieTableau(contact2,nom,nom_fichier)
   end
 
 

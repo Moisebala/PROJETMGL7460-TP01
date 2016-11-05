@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/lib/telApp/tableau.rb" afterPath="$PROJECT_DIR$/telApp/lib/telApp/tableau.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" afterPath="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/test/telApp_test.rb" afterPath="$PROJECT_DIR$/telApp/test/telApp_test.rb" />
     </list>
     <ignored path="PROJETMGL7460-TP01.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +58,8 @@
       <file leaf-file-name="telApp.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/telApp.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            <state relative-caret-position="180">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -69,8 +68,8 @@
       <file leaf-file-name="tableau.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/tableau.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            <state relative-caret-position="195">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -105,8 +104,8 @@
         <option value="$PROJECT_DIR$/telApp/lib/telApp/contact.rb" />
         <option value="$PROJECT_DIR$/telApp/bin/telApp" />
         <option value="$PROJECT_DIR$/telApp/contacts.txt" />
-        <option value="$PROJECT_DIR$/telApp/lib/telApp/tableau.rb" />
         <option value="$PROJECT_DIR$/telApp/test/telApp_test.rb" />
+        <option value="$PROJECT_DIR$/telApp/lib/telApp/tableau.rb" />
         <option value="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" />
       </list>
     </option>
@@ -434,7 +433,7 @@
       <workItem from="1478307430854" duration="50000" />
       <workItem from="1478307519345" duration="118000" />
       <workItem from="1478308296388" duration="1375000" />
-      <workItem from="1478311150620" duration="1447000" />
+      <workItem from="1478311150620" duration="2646000" />
     </task>
     <task id="LOCAL-00001" summary="Definition des fonctionnalites .">
       <created>1475452357700</created>
@@ -688,11 +687,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478306810018</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="separation de module et ajout de methode contact_trouver">
+      <created>1478313720270</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1478313720270</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127537000" />
+    <option name="totallyTimeSpent" value="128736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1260" height="687" extended-state="0" />
@@ -1128,14 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/tableau.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/telApp/bin/telApp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1144,10 +1142,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/tableau.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/telApp.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        <state relative-caret-position="180">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,6 @@
 module Tableau
 
-  def self.copieTableau(perso,nom,nom_fichier)
+  def self.copieTableau(nom,nom_fichier)
     rep = []
     rep2 =[]
     Fichier.ouvrir_fichier(nom_fichier, rep)
