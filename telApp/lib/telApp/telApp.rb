@@ -9,7 +9,7 @@ module TelApp
   Fichier.ouvrir_fichier(nom_fichier, rep)
   rep.each do |contact|
     if contact.nom.match( /#{nom}/i )
-      @numeroTel = numero
+      contact.numeroTel = numero
     end
     Tableau.copieTableau(contact, nom,nom_fichier)
   end
