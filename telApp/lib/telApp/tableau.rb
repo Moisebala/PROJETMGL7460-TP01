@@ -1,6 +1,6 @@
 module Tableau
 
-  def self.copieTableau(nom,nom_fichier)
+  def self.copieTableau(perso,nom,nom_fichier)
     rep = []
     rep2 =[]
     Fichier.ouvrir_fichier(nom_fichier, rep)
@@ -8,6 +8,7 @@ module Tableau
                          rep2 << contact
                        end
     end
+    perso.push rep2
     Fichier.ecrire_fichier(nom_fichier, rep2)
   end
 

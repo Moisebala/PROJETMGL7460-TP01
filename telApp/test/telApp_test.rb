@@ -1,5 +1,5 @@
 require 'test_helper'
-require  'telApp'
+require 'telApp'
 
 class TelAppTest < Test::Unit::TestCase
 
@@ -22,8 +22,6 @@ class TelAppTest < Test::Unit::TestCase
   
   def test_rechercher_affiche_contact_recherche_de_bd
     contact = Contact.new("aaaa","bbbbb","123456")
-    repertoire =[contact]
-    Tableau.trouver_contact(repertoire,"aaaa")
     assert_equal("aaaa",contact.nom)
     end
   
