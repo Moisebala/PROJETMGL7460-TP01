@@ -22,7 +22,7 @@ module TelApp
     Fichier.ouvrir_fichier(nom_fichier, rep)
     rep.each do |contact|
       if contact.nom.match(/#{nom}/i)
-        
+
       end
     end
     Fichier.ecrire_fichier(nom_fichier, rep)
