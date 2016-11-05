@@ -19,13 +19,13 @@ module TelApp
 
   def self.supprimer(nom)
     rep = []
+    rep2=[]
     Fichier.ouvrir_fichier(nom_fichier, rep)
-    rep.each do |contact|
-      if contact.nom.match(/#{nom}/i)
-
+    rep.each do |contact| unless contact.nom.match(/#{nom}/i)
+      rep2 << contact
       end
     end
-    Fichier.ecrire_fichier(nom_fichier, rep)
+    Fichier.ecrire_fichier(nom_fichier, rep2)
     Tableau.trouver_contact(rep , nom)
   end
 
