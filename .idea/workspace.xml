@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d322a928-42c7-4832-99c7-1bd015f49089" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/bin/telApp" afterPath="$PROJECT_DIR$/telApp/bin/telApp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/contacts.txt" afterPath="$PROJECT_DIR$/telApp/contacts.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/lib/telApp/tableau.rb" afterPath="$PROJECT_DIR$/telApp/lib/telApp/tableau.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" afterPath="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" />
     </list>
     <ignored path="PROJETMGL7460-TP01.iws" />
@@ -47,8 +50,8 @@
       <file leaf-file-name="telApp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/telApp/bin/telApp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-335">
-              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+            <state relative-caret-position="230">
+              <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -57,8 +60,8 @@
       <file leaf-file-name="telApp.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/telApp.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -67,8 +70,8 @@
       <file leaf-file-name="tableau.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/tableau.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="45" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="45" />
+            <state relative-caret-position="213">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -101,9 +104,9 @@
         <option value="$PROJECT_DIR$/telApp/lib/telApp/verify.rb" />
         <option value="$PROJECT_DIR$/telApp/lib/telApp/fichier_text.rb" />
         <option value="$PROJECT_DIR$/telApp/lib/telApp/contact.rb" />
-        <option value="$PROJECT_DIR$/telApp/bin/telApp" />
         <option value="$PROJECT_DIR$/telApp/contacts.txt" />
         <option value="$PROJECT_DIR$/telApp/test/telApp_test.rb" />
+        <option value="$PROJECT_DIR$/telApp/bin/telApp" />
         <option value="$PROJECT_DIR$/telApp/lib/telApp/tableau.rb" />
         <option value="$PROJECT_DIR$/telApp/lib/telApp/telApp.rb" />
       </list>
@@ -432,7 +435,7 @@
       <workItem from="1478307430854" duration="50000" />
       <workItem from="1478307519345" duration="118000" />
       <workItem from="1478308296388" duration="1375000" />
-      <workItem from="1478311150620" duration="4456000" />
+      <workItem from="1478311150620" duration="6179000" />
     </task>
     <task id="LOCAL-00001" summary="Definition des fonctionnalites .">
       <created>1475452357700</created>
@@ -714,15 +717,29 @@
       <option name="project" value="LOCAL" />
       <updated>1478316986807</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="separation de module et ajout de methode contact_trouver">
+      <created>1478317032070</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1478317032070</updated>
+    </task>
+    <task id="LOCAL-00042" summary="separation de module et ajout de methode contact_trouver">
+      <created>1478317187244</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1478317187244</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130546000" />
+    <option name="totallyTimeSpent" value="132269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1260" height="687" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22495896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -730,7 +747,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2536946" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39613527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39613527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1131,6 +1148,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/telApp/contacts.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/fichier_text.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1149,32 +1174,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/telApp/bin/telApp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-335">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        <state relative-caret-position="230">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/tableau.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telApp/contacts.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="213">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/telApp/lib/telApp/telApp.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding />
         </state>
       </provider>

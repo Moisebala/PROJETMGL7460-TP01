@@ -1,17 +1,8 @@
 module Tableau
 
-  def self.copieTableau(nom,nom_fichier)
-    rep = []
-    rep2 =[]
-    Fichier.ouvrir_fichier(nom_fichier, rep)
-    rep.each do |contact| unless contact.nom.match(/#{nom}/i)
-                         rep2 << contact
-                       end
-    end
-    perso.push rep2
-    Fichier.ecrire_fichier(nom_fichier, rep2)
+  class << self
+    attr_accessor :nom_fichier
   end
-
 
   def self.trouver_contact(repertoire,nom)
     repertoire.select do |contact|
@@ -19,6 +10,17 @@ module Tableau
         return contact
       end
     end
+  end
+
+
+  def self.tableaucontact()
+    rep= Array.new
+    Fichier.ouvrir_fichier(nom_fichier,rep)
+    return rep
+  end
+
+  def self.retourTableau(rep)
+    Fichier.ecrire_fichier(nom_fichier, rep)
   end
 
 end
